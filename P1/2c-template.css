@@ -145,7 +145,7 @@ body::before {
 
 
 
-                /* BOTONES */
+                /* BOTONES index */
 
 
 .boton-columna {
@@ -168,6 +168,39 @@ body::before {
     background-color: #067e06;
     transform: scale(1.05);
 }
+
+
+
+
+/* FORMATO ABOUT */
+
+.premio {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.premio img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease;
+}
+
+.premio img:hover {
+    transform: scale(1.08);
+}
+
+.premio h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* boton volver */
+
+
 
 
 
