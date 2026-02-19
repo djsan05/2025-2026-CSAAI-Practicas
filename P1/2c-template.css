@@ -21,22 +21,57 @@ width: 75%;
 }
 
 /* Clear floats despues de las columnas para eliminar la superposición */
-.filla:after {
+.fila:after {
 content: "";
 display: table;
 clear: both;
 }
 
 #c1 {
-    background-color:#aaa;
+    background-color:#3f802c77;
 }
 
 #c2 {
-    background-color:#bbb;
+    background-color:#3f802c77;
 }
 
-/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
-/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
+
+
+
+                /* TÍTULO PRINCIPAL */
+
+body > h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+}
+
+
+
+
+/* EFECTO 3D FOTO GRANDE */
+
+#c2 img {
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.5),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+    
+}
+
+
+/* EFECTO FOTOS PEQUEÑAS C1 Y C2 */
+
+#c1 img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 15px 0;
+   
+}
+
 
 img {
     width: 100%;
@@ -61,5 +96,85 @@ img {
         width: 100%;
     }
 }
+
+
+
+
+/* TEXTO EN BLANCO */
+
+
+body {
+    color: white;
+}
+
+h1, h2, h3, p, li {
+    color: white;
+}
+
+
+
+
+
+/* FONDO GENERAL DESENFOCADO */
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Capa de fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("fondo.jpeg"); /* CAMBIA EL NOMBRE SI ES DISTINTO */
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(8px);
+    z-index: -1;
+}
+
+
+
+                /* BOTONES */
+
+
+.boton-columna {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.boton-columna a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.boton-columna a:hover {
+    background-color: #067e06;
+    transform: scale(1.05);
+}
+
+
+
+
+
+/* Para que el contenido se vea bien encima */
+
+
 
 /* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
