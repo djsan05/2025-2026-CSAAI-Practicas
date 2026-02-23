@@ -228,6 +228,68 @@ body::before {
 
 
 
+/* FORMATO D DE PROYECTS */
+
+
+.titulo-principal {
+    text-align: center;
+    font-size: 40px;
+    margin: 40px 0;
+    color: white;
+}
+
+.contenedor-proyectos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.7);
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.boton-card {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #067e06;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.boton-card:hover {
+    background-color: white;
+}
+
+.boton-volver {
+    text-align: center;
+    margin: 40px;
+}
+
+.boton-volver a {
+    padding: 12px 20px;
+    background-color: #067e06;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+
 
 
 /* Para que el contenido se vea bien encima */
