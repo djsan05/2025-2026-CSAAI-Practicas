@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego BOOM - Práctica 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <header>
+            <h1>B O O M</h1>
+        </header>
+
+        <main class="panel">
+            <div id="secret-display" class="secret-container">
+                <div class="digit" id="d0">*</div>
+                <div class="digit" id="d1">*</div>
+                <div class="digit" id="d2">*</div>
+                <div class="digit" id="d3">*</div>
+            </div>
+
+             
+            <div class="stats">
+                <div id="timer">0:00:00</div>
+                <div id="attempts-left">Intentos restantes: 7</div>
+            </div>
+
+            <div id="message-area">
+                Nueva partida preparada. Pulsa un número o Start.
+            </div>
+
+            <section class="keypad" id="keypad">
+                <button class="num-btn" value="7">7</button>
+                <button class="num-btn" value="8">8</button>
+                <button class="num-btn" value="9">9</button>
+                <button class="num-btn" value="4">4</button>
+                <button class="num-btn" value="5">5</button>
+                <button class="num-btn" value="6">6</button>
+                <button class="num-btn" value="1">1</button>
+                <button class="num-btn" value="2">2</button>
+                <button class="num-btn" value="3">3</button>
+                <div class="spacer"></div>
+                <button class="num-btn" value="0">0</button>
+                <div class="spacer"></div>
+            </section>
+
+            <section class="main-controls">
+                <button id="btn-start" class="ctrl-start">Start</button>
+                <button id="btn-stop" class="ctrl-stop">Stop</button>
+                <button id="btn-reset" class="ctrl-reset">Reset</button>
+            </section>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
