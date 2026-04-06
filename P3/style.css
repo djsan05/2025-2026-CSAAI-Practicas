@@ -1,0 +1,80 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo del juego */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* HUD (marcador superior) */
+#hud {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 900px;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Canvas del juego */
+#gameCanvas {
+    background: black;
+    border: 2px solid white;
+    display: block;
+    margin: auto;
+}
+
+/* Barra de energía */
+#energy-bar {
+    width: 150px;
+    height: 15px;
+    border: 1px solid white;
+    margin-top: 5px;
+}
+
+#energy-fill {
+    width: 100%;
+    height: 100%;
+    background-color: lime;
+}
+
+/* Mensaje final */
+#message {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: red;
+    display: none;
+}
+
+/* Responsive para móvil */
+@media (max-width: 950px) {
+
+    #hud {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #gameCanvas {
+        width: 95%;
+        height: auto;
+    }
+
+}
