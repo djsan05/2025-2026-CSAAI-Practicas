@@ -6,21 +6,11 @@
 }
 
 /* Fondo del juego */
-body{
-    margin:0;
-    background-image: url("images/space.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    color:white;
+body {
+    background-color: black;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
-    text-align:center;
-}
-
-canvas{
-    border:2px solid white;
-    background: transparent;
+    text-align: center;
 }
 
 /* Título */
