@@ -10,10 +10,10 @@ const message = document.getElementById("message");
 
 // imágenes
 const playerImg = new Image();
-playerImg.src = "images/player.png";
+playerImg.src = "player.png";
 
 const alienImg = new Image();
-alienImg.src = "images/alien.png";
+alienImg.src = "alien.png";
 
 // jugador
 let player = {
