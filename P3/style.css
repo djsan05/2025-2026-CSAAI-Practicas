@@ -7,7 +7,7 @@
 
 /* Fondo del juego */
 body {
-    margin: 0;
+    margin: 0; 
     background-image: url("fondo.jpeg");
     background-size: cover;
     background-position: center;
