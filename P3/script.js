@@ -17,10 +17,10 @@ alienImg.src = "alien.png";
 
 // jugador
 let player = {
-    x: canvas.width/2 - 30,
-    y: canvas.height - 70,
-    w: 60,
-    h: 60,
+    x: canvas.width / 2 - 60,
+    y: canvas.height - 120,
+    width: 120,
+    height: 120,
     speed: 6
 };
 
@@ -119,7 +119,7 @@ function moveAliens(){
     aliens.forEach(a=>{
         if(!a.alive) return;
 
-        a.x += direction;
+        a.x += direction * 3;
 
         if(a.x < 0 || a.x + a.w > canvas.width){
             edge = true;
