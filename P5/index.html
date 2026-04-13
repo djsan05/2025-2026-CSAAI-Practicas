@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot League - Juego de Fútbol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <header>
+            <h1>Bot League</h1>
+            <p>Versión 1.0 · Movimiento, dirección y chut</p>
+        </header>
+
+        <div id="canvas-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            
+            <div id="overlay-menu" class="overlay">
+                <h2>Bot League</h2>
+                <p>Elige modo de juego</p>
+                <button onclick="startGame('3-goals')">1: Partido a 3 goles</button>
+                <button onclick="startGame('golden-goal')">2: Gol de oro</button>
+                <p class="controls-hint">Flechas: Mover | A-D: Girar | Espacio: Chutar</p>
+            </div>
+
+            <div id="overlay-message" class="overlay hidden">
+                <h2 id="status-text">¡GOOOL!</h2>
+                <p id="countdown-text"></p>
+                <div id="post-game-buttons" class="hidden">
+                    <button onclick="location.reload()">R: Reiniciar</button>
+                    <button onclick="location.reload()">M: Menú</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Controles: Flechas para mover · A/D para girar la dirección · Espacio para chutar</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
