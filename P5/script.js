@@ -6,6 +6,11 @@ canvas.width = 800;
 canvas.height = 500;
 
 // =======================
+// ESTADO DEL JUEGO
+// =======================
+let gameStarted = false;
+
+// =======================
 // JUGADORES
 // =======================
 const playerBlue = {
@@ -20,7 +25,7 @@ const playerRed = {
     x: 600,
     y: 250,
     angle: 0,
-    speed: 1.2, // más lento
+    speed: 1.2,
     color: "red"
 };
 
@@ -53,6 +58,14 @@ window.addEventListener("keyup", (e) => {
 });
 
 // =======================
+// INICIAR JUEGO (ARREGLADO)
+// =======================
+function startGame(mode) {
+    document.getElementById("overlay-menu").classList.add("hidden");
+    gameStarted = true;
+}
+
+// =======================
 // MOVIMIENTO JUGADOR AZUL
 // =======================
 function updateBluePlayer() {
@@ -75,7 +88,7 @@ function updateBluePlayer() {
 }
 
 // =======================
-// IA JUGADOR ROJO (ARREGLADA)
+// IA JUGADOR ROJO
 // =======================
 function updateRedPlayer() {
     const dx = ball.x - playerRed.x;
@@ -93,13 +106,12 @@ function updateRedPlayer() {
 
     keepInsideField(playerRed);
 
-    // Chutar si está cerca
     const dist = Math.hypot(dx, dy);
     if (dist < 25) shootBall(playerRed);
 }
 
 // =======================
-// LIMITES DEL CAMPO
+// LIMITES
 // =======================
 function keepInsideField(player) {
     const margin = 20;
@@ -125,24 +137,20 @@ function updateBall() {
     ball.x += ball.vx;
     ball.y += ball.vy;
 
-    // Rebotes
     if (ball.x < ball.radius || ball.x > canvas.width - ball.radius) {
         ball.vx *= -1;
-        ball.x = Math.max(ball.radius, Math.min(canvas.width - ball.radius, ball.x));
     }
 
     if (ball.y < ball.radius || ball.y > canvas.height - ball.radius) {
         ball.vy *= -1;
-        ball.y = Math.max(ball.radius, Math.min(canvas.height - ball.radius, ball.y));
     }
 
-    // Fricción
     ball.vx *= 0.98;
     ball.vy *= 0.98;
 }
 
 // =======================
-// DIBUJADO
+// DIBUJO
 // =======================
 function drawPlayer(player) {
     ctx.save();
@@ -154,7 +162,6 @@ function drawPlayer(player) {
     ctx.arc(0, 0, 15, 0, Math.PI * 2);
     ctx.fill();
 
-    // Dirección
     ctx.strokeStyle = "white";
     ctx.beginPath();
     ctx.moveTo(0, 0);
@@ -177,14 +184,16 @@ function drawField() {
 }
 
 // =======================
-// LOOP
+// LOOP (ARREGLADO)
 // =======================
 function gameLoop() {
     drawField();
 
-    updateBluePlayer();
-    updateRedPlayer();
-    updateBall();
+    if (gameStarted) {
+        updateBluePlayer();
+        updateRedPlayer();
+        updateBall();
+    }
 
     drawPlayer(playerBlue);
     drawPlayer(playerRed);
@@ -196,5 +205,4 @@ function gameLoop() {
 // =======================
 // INICIO
 // =======================
-canvas.focus();
 gameLoop();
