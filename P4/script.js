@@ -89,7 +89,11 @@ async function playGame(){
     },1000);
 
     if(musicToggle.checked){
-        music.play();
+        music.volume = 0.25;
+
+        music.play().catch(error => {
+        console.log("Audio bloqueado:", error);
+});
     }
 
     let startLevel = parseInt(levelSelect.value);
