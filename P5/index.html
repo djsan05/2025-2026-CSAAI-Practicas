@@ -7,39 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="game-container">
         <header>
             <h1>Bot League</h1>
-            <p>Versión 1.0 · Movimiento, dirección y chutar</p>
+            <div id="scoreboard" class="hidden">
+                <span id="score-blue">0</span>
+                <span class="score-sep">:</span>
+                <span id="score-red">0</span>
+            </div>
+            <div id="mode-display" class="hidden"></div>
         </header>
 
         <div id="canvas-wrapper">
             <canvas id="gameCanvas"></canvas>
-            
+
+            <!-- Menú inicial -->
             <div id="overlay-menu" class="overlay">
                 <h2>Bot League</h2>
-                <p>Elige modo de juego</p>
-                <button onclick="startGame('3-goals')">1: Partido a 3 goles</button>
-                <button onclick="startGame('golden-goal')">2: Gol de oro</button>
-                <p class="controls-hint">Flechas: Mover | A-D: Girar | Espacio: Chutar</p>
+                <p>Elige el modo de juego</p>
+                <button id="btn-3goals">Partido a 3 goles</button>
+                <button id="btn-golden">Gol de oro</button>
+                <p class="controls-hint">&#8593; Mover &middot; A/D Girar &middot; Espacio Chutar</p>
             </div>
 
+            <!-- Overlay de cuenta atrás y mensajes -->
             <div id="overlay-message" class="overlay hidden">
-                <h2 id="status-text">¡GOOOL!</h2>
+                <h2 id="status-text"></h2>
                 <p id="countdown-text"></p>
                 <div id="post-game-buttons" class="hidden">
-                    <button onclick="location.reload()">Reiniciar</button>
-                    <button onclick="location.reload()">Menú</button>
+                    <button id="btn-restart">Reiniciar</button>
+                    <button id="btn-menu">Menú</button>
                 </div>
             </div>
         </div>
 
         <footer>
-            <p>Controles: Flechas para mover · A/D para girar la dirección · Espacio para chutar</p>
+            <p>Controles: Flechas para mover &middot; A/D para girar &middot; Espacio para chutar</p>
         </footer>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
